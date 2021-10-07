@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>iOS and Js</title>
+        <script>
+            
+            // web调用原生
+            function wwwebToNative(){
+                window.webkit.messageHandlers.CommonScriptMessageHandler.postMessage({"params":"hello navite","callback":"webToNativeCallback","v1":"v2"});
+            }
+            
+            // web调用原生后的回调
+            function webToNativeCallback(parameter){
+                alert(parameter)
+                document.getElementById("myHeader").innerHTML = parameter;
+                return "gggg";
+            }
+            
+            
+            function jsFunInHtml1(parameter){
+                alert(parameter)
+                document.getElementById("myHeader").innerHTML = parameter;
+                return "2231";
+            }
+            
+            function getInfoFromNative(){
+                
+                var params = {'name':'我是jack！！！'};
+                
+                CommonEventHandler.exec('getNativeInfo',params,function(data){
+                                        document.getElementById("myHeader").innerHTML = data;
+                                        alert(data);
+                                    },
+                                    function(data){
+                                       // console.log('fail block');
+                                        alert(data);
+                                    }
+                                    );
+                
+
+            }
+            
+            function getUUID(){
+                var params = {};
+
+                CommonEventHandler.exec("getUDID",params,function(udid){
+                    document.getElementById("myHeader").innerHTML = udid;
+                },function(errorMsg){
+                    document.getElementById("myHeader").innerHTML = errorMsg;
+                });
+            }
+
+            
+        </script>
+    </head>
+    <body>
+        
+        <h1 id="myHeader" value="">Hello</h1>
+        <br/>
+        
+        <br/>
+        <button onclick="getInfoFromNative()">Web调用原生getInfoFromNative</button>
+        <br/>
+        
+        <br/>
+        <button onclick="wwwebToNative()">Web调用原生</button>
+        <br/>
+       
+        
+    </body>
+</html>

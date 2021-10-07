@@ -10,6 +10,8 @@ import UIKit
 enum DemoType: String, CaseIterable {
     case FastNotification
     case AlertStyleView
+    case Timer
+    case CommonScriptMessageHandler
     
     var vcType: UIViewController.Type{
         switch self {
@@ -17,6 +19,10 @@ enum DemoType: String, CaseIterable {
             return FastNotificationProtocolVC.self
         case .AlertStyleView:
             return AlertStyleViewVC.self
+        case .Timer:
+            return TimerVC.self
+        case .CommonScriptMessageHandler:
+            return  CommonScriptMessageHandlerVC.self
         }
     }
 }
@@ -25,7 +31,9 @@ class MainVC: UITableViewController {
     
     let titles: [DemoType] = [
         .FastNotification,
-        .AlertStyleView
+        .AlertStyleView,
+        .Timer,
+        .CommonScriptMessageHandler
     ]
 
     override func viewDidLoad() {

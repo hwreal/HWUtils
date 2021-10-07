@@ -8,7 +8,7 @@
 import UIKit
 import HWUtils
 
-class AlertOne: UIView, AlertStyleView {
+class AlertOne: UIView, AlertStyleViewProtocol {
     @IBOutlet weak var cancelButton: UIButton!
     
     @IBOutlet weak var confirmButton: UIButton!

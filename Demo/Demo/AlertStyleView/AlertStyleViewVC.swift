@@ -8,8 +8,6 @@
 import UIKit
 import HWUtils
 
-
-
 class AlertStyleViewVC: UIViewController {    
     
     override func viewDidLoad() {

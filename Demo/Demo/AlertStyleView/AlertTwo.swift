@@ -8,7 +8,7 @@
 import UIKit
 import HWUtils
 
-class AlertTwo: UIView, AlertStyleView{
+class AlertTwo: UIView, AlertStyleViewProtocol{
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     
