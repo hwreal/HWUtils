@@ -19,10 +19,14 @@
 		9542F47C26F367EE00664188 /* AlertOne.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9542F47B26F367EE00664188 /* AlertOne.xib */; };
 		955CA718270710A5000E0AEE /* CommonScriptMessageHandlerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955CA717270710A5000E0AEE /* CommonScriptMessageHandlerVC.swift */; };
 		955CA71A270713D6000E0AEE /* main.html in Resources */ = {isa = PBXBuildFile; fileRef = 955CA719270713D6000E0AEE /* main.html */; };
+		957A7416270EDDFE00D26434 /* kf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A7415270EDDFE00D26434 /* kf.swift */; };
+		957A74AC2715362F00D26434 /* SignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A74AB2715362F00D26434 /* SignView.swift */; };
+		957A74CF2716BC0100D26434 /* TODOVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957A74CE2716BC0000D26434 /* TODOVC.swift */; };
 		9584629826F5BEC40086EB73 /* AlertTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9584629726F5BEC40086EB73 /* AlertTwo.swift */; };
 		9584629A26F5BECF0086EB73 /* AlertTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9584629926F5BECF0086EB73 /* AlertTwo.xib */; };
 		958462A726F5D1F70086EB73 /* TimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958462A626F5D1F70086EB73 /* TimerVC.swift */; };
 		958462A926F5D7780086EB73 /* WeakProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958462A826F5D7780086EB73 /* WeakProxy.swift */; };
+		95FE7F952725957000EA1A08 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FE7F942725957000EA1A08 /* Promise.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,10 +57,14 @@
 		9542F47B26F367EE00664188 /* AlertOne.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertOne.xib; sourceTree = "<group>"; };
 		955CA717270710A5000E0AEE /* CommonScriptMessageHandlerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonScriptMessageHandlerVC.swift; sourceTree = "<group>"; };
 		955CA719270713D6000E0AEE /* main.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = main.html; sourceTree = "<group>"; };
+		957A7415270EDDFE00D26434 /* kf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kf.swift; sourceTree = "<group>"; };
+		957A74AB2715362F00D26434 /* SignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignView.swift; sourceTree = "<group>"; };
+		957A74CE2716BC0000D26434 /* TODOVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODOVC.swift; sourceTree = "<group>"; };
 		9584629726F5BEC40086EB73 /* AlertTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTwo.swift; sourceTree = "<group>"; };
 		9584629926F5BECF0086EB73 /* AlertTwo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertTwo.xib; sourceTree = "<group>"; };
 		958462A626F5D1F70086EB73 /* TimerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVC.swift; sourceTree = "<group>"; };
 		958462A826F5D7780086EB73 /* WeakProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakProxy.swift; sourceTree = "<group>"; };
+		95FE7F942725957000EA1A08 /* Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,13 +99,16 @@
 		9542F45426F3316700664188 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				957A74CD2716BB8800D26434 /* TODO */,
+				957A7414270EDDE200D26434 /* KF */,
 				958462A526F5D1D30086EB73 /* Timer */,
 				9542F47826F3503E00664188 /* AlertStyleView */,
 				9542F47726F3503500664188 /* FastNotification */,
-				9542F45526F3316700664188 /* AppDelegate.swift */,
 				955CA7162707107E000E0AEE /* CommonScriptMessageHandler */,
 				9542F45E26F3316A00664188 /* Assets.xcassets */,
+				9542F45526F3316700664188 /* AppDelegate.swift */,
 				9542F45926F3316700664188 /* MainVC.swift */,
+				95FE7F942725957000EA1A08 /* Promise.swift */,
 				9542F46026F3316A00664188 /* LaunchScreen.storyboard */,
 				9542F46326F3316A00664188 /* Info.plist */,
 			);
@@ -124,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				9542F47526F34D0000664188 /* AlertStyleViewVC.swift */,
+				957A74AB2715362F00D26434 /* SignView.swift */,
 				9542F47926F367E200664188 /* AlertOne.swift */,
 				9542F47B26F367EE00664188 /* AlertOne.xib */,
 				9584629726F5BEC40086EB73 /* AlertTwo.swift */,
@@ -139,6 +151,22 @@
 				955CA717270710A5000E0AEE /* CommonScriptMessageHandlerVC.swift */,
 			);
 			path = CommonScriptMessageHandler;
+			sourceTree = "<group>";
+		};
+		957A7414270EDDE200D26434 /* KF */ = {
+			isa = PBXGroup;
+			children = (
+				957A7415270EDDFE00D26434 /* kf.swift */,
+			);
+			path = KF;
+			sourceTree = "<group>";
+		};
+		957A74CD2716BB8800D26434 /* TODO */ = {
+			isa = PBXGroup;
+			children = (
+				957A74CE2716BC0000D26434 /* TODOVC.swift */,
+			);
+			path = TODO;
 			sourceTree = "<group>";
 		};
 		958462A526F5D1D30086EB73 /* Timer */ = {
@@ -225,8 +253,12 @@
 			files = (
 				958462A726F5D1F70086EB73 /* TimerVC.swift in Sources */,
 				9542F45A26F3316700664188 /* MainVC.swift in Sources */,
+				957A7416270EDDFE00D26434 /* kf.swift in Sources */,
+				957A74AC2715362F00D26434 /* SignView.swift in Sources */,
 				955CA718270710A5000E0AEE /* CommonScriptMessageHandlerVC.swift in Sources */,
 				9542F47A26F367E200664188 /* AlertOne.swift in Sources */,
+				957A74CF2716BC0100D26434 /* TODOVC.swift in Sources */,
+				95FE7F952725957000EA1A08 /* Promise.swift in Sources */,
 				9542F45626F3316700664188 /* AppDelegate.swift in Sources */,
 				958462A926F5D7780086EB73 /* WeakProxy.swift in Sources */,
 				9542F47426F343D500664188 /* FastNotificationProtocolVC.swift in Sources */,

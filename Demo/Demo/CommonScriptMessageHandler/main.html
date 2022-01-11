@@ -8,7 +8,12 @@
             
             // web调用原生
             function wwwebToNative(){
-                window.webkit.messageHandlers.CommonScriptMessageHandler.postMessage({"params":"hello navite","callback":"webToNativeCallback","v1":"v2"});
+                window.webkit.messageHandlers.OCFunAAA.postMessage({"params":"hello navite","callback":"webToNativeCallback","v1":"v2"});
+            }
+            
+            // web调用原生2
+            function wwwebToNative2(){
+                window.webkit.messageHandlers.OCFunAAA2.postMessage({"params":"hello navite","callback":"webToNativeCallback","v1":"v2"});
             }
             
             // web调用原生后的回调
@@ -25,6 +30,7 @@
                 return "2231";
             }
             
+            
             function getInfoFromNative(){
                 
                 var params = {'name':'我是jack！！！'};
@@ -38,9 +44,9 @@
                                         alert(data);
                                     }
                                     );
-                
-
             }
+            
+            
             
             function getUUID(){
                 var params = {};
@@ -66,6 +72,10 @@
         
         <br/>
         <button onclick="wwwebToNative()">Web调用原生</button>
+        <br/>
+        
+        <br/>
+        <button onclick="wwwebToNative2()">Web调用原生2</button>
         <br/>
        
         

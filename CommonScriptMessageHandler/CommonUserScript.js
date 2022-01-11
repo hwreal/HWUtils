@@ -57,7 +57,6 @@ removeAllCallBacks:function(data){
 
 
 
-
 var JKBridgeEvent = {
     
 _listeners: {},

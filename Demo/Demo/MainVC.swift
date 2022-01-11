@@ -8,6 +8,7 @@
 import UIKit
 
 enum DemoType: String, CaseIterable {
+    case TODO
     case FastNotification
     case AlertStyleView
     case Timer
@@ -15,6 +16,8 @@ enum DemoType: String, CaseIterable {
     
     var vcType: UIViewController.Type{
         switch self {
+        case .TODO:
+            return TODOVC.self
         case .FastNotification:
             return FastNotificationProtocolVC.self
         case .AlertStyleView:
@@ -30,6 +33,7 @@ enum DemoType: String, CaseIterable {
 class MainVC: UITableViewController {
     
     let titles: [DemoType] = [
+        .TODO,
         .FastNotification,
         .AlertStyleView,
         .Timer,

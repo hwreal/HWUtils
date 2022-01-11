@@ -37,13 +37,23 @@ extension AlertStyleViewProtocol where Self: UIView{
         self.overlayAlpha = overlayAlpha
         self.tapOutsideDismiss = tapOutsideDismiss
         
+        class_getInstanceSize(nil)
+        
+        
         parentView.addSubview(overlayView)
         parentView.addSubview(self)
         translatesAutoresizingMaskIntoConstraints = false
         
+        
+        // 添加约束: 方式1
         parentView.addConstraint(NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: parentView, attribute: .centerX, multiplier: 1, constant: 0))
         parentView.addConstraint(NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: .equal, toItem: parentView, attribute: .centerY, multiplier: 1, constant: -50))
         parentView.addConstraint(NSLayoutConstraint(item: self, attribute: .width, relatedBy: .equal, toItem: parentView, attribute: .width, multiplier: 1, constant: -40))
+        
+        //  添加约束: 方式2
+        //        self.centerXAnchor.constraint(equalTo: parentView.centerXAnchor).isActive = true
+        //        self.centerYAnchor.constraint(equalTo: parentView.centerYAnchor, constant: -50).isActive = true
+        //        self.widthAnchor.constraint(equalTo: parentView.widthAnchor, constant: -40).isActive = true
         
         
         overlayView.alpha = 0
@@ -85,17 +95,21 @@ extension AlertStyleViewProtocol where Self: UIView{
     }
     
     public var overlayView: UIView{
-        if let overlayView = objc_getAssociatedObject(self, &overlayViewKey) as? UIView{
-            return overlayView
-        }else{
-            let overlayView = UIView(frame: UIScreen.main.bounds)
-            overlayView.backgroundColor = UIColor.black.withAlphaComponent(overlayAlpha)
-            overlayView.isUserInteractionEnabled = true
-            let tap = UITapGestureRecognizer(target: self, action: #selector(tapOverlayView(_:)))
-            overlayView.addGestureRecognizer(tap)
-            objc_setAssociatedObject(self, &overlayViewKey, overlayView, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            return overlayView
+        get{
+            if let overlayView = objc_getAssociatedObject(self, &overlayViewKey) as? UIView{
+                return overlayView
+            }else{
+                let overlayView = UIView(frame: UIScreen.main.bounds)
+                overlayView.backgroundColor = UIColor.black.withAlphaComponent(overlayAlpha)
+                overlayView.isUserInteractionEnabled = true
+                let sel = Selector("tapOverlayView:")
+                let tap = UITapGestureRecognizer(target: self, action: sel)
+                overlayView.addGestureRecognizer(tap)
+                objc_setAssociatedObject(self, &overlayViewKey, overlayView, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+                return overlayView
+            }
         }
+        set {}
     }
     
     var overlayAlpha: CGFloat {
@@ -110,6 +124,7 @@ fileprivate extension UIView{
         guard let selfView = self as? AlertStyleViewProtocol & UIView else {return}
         if selfView.tapOutsideDismiss {
             selfView.hide()
+            print("s1")
         }
     }
 }

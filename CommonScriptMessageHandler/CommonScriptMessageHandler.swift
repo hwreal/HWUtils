@@ -28,7 +28,8 @@ public class CommonScriptMessageHandler: NSObject, WKScriptMessageHandler{
     //MARK: - WKScriptMessageHandler
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         print("\(self) receive message: \(message.name)\nbody:\(message.body)")
-        
+        //message = {'func':funcName,'params':params,'failureCallBackID':failureCallBackID};
+
         guard let bodyDic = message.body as? [String: Any],
               let action = bodyDic["func"] as? String else{
             return
